@@ -9,12 +9,24 @@ namespace App
 
         public void SendMessage()
         {
-            Console.WriteLine($"Sending a message to: {FirstName} {LastName}");
+            Console.WriteLine($"Sending a message to: {FirstName} {LastName}\n");
         }
 
-        public void CalcuateTimeSinceBirth(TimeMeasurementUnit timeMeasurementUnit)
+        public void OutputTimeSinceBirth()
         {
             DateTime currentDateTime = DateTime.Now;
+
+            Console.WriteLine($"It is currently {currentDateTime}");
+            Console.WriteLine("Calculating time since birth ...\n");
+
+            foreach (TimeMeasurementUnit unit in Enum.GetValues(typeof(TimeMeasurementUnit)))
+            {
+                CalcuateTimeSinceBirth(unit, currentDateTime);
+            }
+        }
+
+        private void CalcuateTimeSinceBirth(TimeMeasurementUnit timeMeasurementUnit, DateTime currentDateTime)
+        {
 
             switch (timeMeasurementUnit)
             {
