@@ -1,10 +1,13 @@
-public enum TimeMeasurementUnit
+namespace App
 {
-    Seconds,
-    Minutes,
-    Hours,
-    Days,
-    Weeks,
-    Years,
-    Decades
+    public enum TimeMeasurementUnit
+    {
+        Seconds,
+        Minutes,
+        Hours,
+        Days,
+        Weeks,
+        Years,
+        Decades
+    }
 }
