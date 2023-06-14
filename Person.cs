@@ -22,39 +22,77 @@ namespace App
 
             foreach (TimeMeasurementUnit unit in Enum.GetValues(typeof(TimeMeasurementUnit)))
             {
-                CalcuateTimeSinceBirth(unit, currentDateTime);
+                CalculateTimeSinceBirth(unit, currentDateTime);
             }
         }
 
-        private void CalcuateTimeSinceBirth(TimeMeasurementUnit timeMeasurementUnit, DateTime currentDateTime)
+        private void CalculateTimeSinceBirth(TimeMeasurementUnit timeMeasurementUnit, DateTime currentDateTime)
         {
+            TimeSpan timeSinceBirth = currentDateTime - Birthday;
+            double totalUnits;
 
             switch (timeMeasurementUnit)
             {
                 case TimeMeasurementUnit.Seconds:
-                    Console.WriteLine($"{(currentDateTime - Birthday).TotalSeconds:N0} seconds old");
+                    totalUnits = timeSinceBirth.TotalSeconds;
+                    Console.WriteLine($"{totalUnits:N0} seconds old");
                     break;
                 case TimeMeasurementUnit.Minutes:
-                    Console.WriteLine($"{(currentDateTime - Birthday).TotalMinutes:N0} minutes old");
+                    totalUnits = timeSinceBirth.TotalMinutes;
+                    Console.WriteLine($"{totalUnits:N0} minutes old");
                     break;
                 case TimeMeasurementUnit.Hours:
-                    Console.WriteLine($"{(currentDateTime - Birthday).TotalHours:N0} hours old");
+                    totalUnits = timeSinceBirth.TotalHours;
+                    Console.WriteLine($"{totalUnits:N0} hours old");
                     break;
                 case TimeMeasurementUnit.Days:
-                    Console.WriteLine($"{(currentDateTime - Birthday).TotalDays:N0} days old");
+                    totalUnits = timeSinceBirth.TotalDays;
+                    Console.WriteLine($"{totalUnits:N0} days old");
                     break;
                 case TimeMeasurementUnit.Weeks:
-                    Console.WriteLine($"{Math.Round((currentDateTime - Birthday).TotalDays / 365 * 52, 2):N0} weeks old");
+                    totalUnits = timeSinceBirth.TotalDays / 365 * 52;
+                    Console.WriteLine($"{Math.Round(totalUnits, 2):N0} weeks old");
                     break;
                 case TimeMeasurementUnit.Years:
-                    Console.WriteLine($"{Math.Round((currentDateTime - Birthday).TotalDays / 365, 2)} years old");
+                    totalUnits = timeSinceBirth.TotalDays / 365;
+                    Console.WriteLine($"{Math.Round(totalUnits, 2)} years old");
                     break;
                 case TimeMeasurementUnit.Decades:
-                    Console.WriteLine($"{Math.Round((currentDateTime - Birthday).TotalDays / 365 / 10, 2)} decades old");
+                    totalUnits = timeSinceBirth.TotalDays / 365 / 10;
+                    Console.WriteLine($"{Math.Round(totalUnits, 2)} decades old");
                     break;
                 default:
                     break;
             }
         }
+
+
+        //     switch (timeMeasurementUnit)
+        //     {
+        //         case TimeMeasurementUnit.Seconds:
+        //             Console.WriteLine($"{(currentDateTime - Birthday).TotalSeconds:N0} seconds old");
+        //             break;
+        //         case TimeMeasurementUnit.Minutes:
+        //             Console.WriteLine($"{(currentDateTime - Birthday).TotalMinutes:N0} minutes old");
+        //             break;
+        //         case TimeMeasurementUnit.Hours:
+        //             Console.WriteLine($"{(currentDateTime - Birthday).TotalHours:N0} hours old");
+        //             break;
+        //         case TimeMeasurementUnit.Days:
+        //             Console.WriteLine($"{(currentDateTime - Birthday).TotalDays:N0} days old");
+        //             break;
+        //         case TimeMeasurementUnit.Weeks:
+        //             Console.WriteLine($"{Math.Round((currentDateTime - Birthday).TotalDays / 365 * 52, 2):N0} weeks old");
+        //             break;
+        //         case TimeMeasurementUnit.Years:
+        //             Console.WriteLine($"{Math.Round((currentDateTime - Birthday).TotalDays / 365, 2)} years old");
+        //             break;
+        //         case TimeMeasurementUnit.Decades:
+        //             Console.WriteLine($"{Math.Round((currentDateTime - Birthday).TotalDays / 365 / 10, 2)} decades old");
+        //             break;
+        //         default:
+        //             break;
+        //     }
+        // }
     }
 }
