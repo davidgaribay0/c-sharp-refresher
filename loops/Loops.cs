@@ -30,5 +30,23 @@ namespace App
             string reversedName = string.Join("  ", listOfChars);
             Console.WriteLine($"{reversedName} \n");
         }
+
+        public static void Timeout(int timeout = 60)
+        {
+            int currentTime = 0;
+
+            while (currentTime < timeout)
+            {
+                Thread.Sleep(1000);
+                Console.WriteLine("Processing ...");
+                Console.WriteLine($"Elapsed time is {currentTime} seconds");
+                currentTime++;
+
+                if (currentTime == timeout)
+                {
+                    Console.WriteLine($"Process terminated due to timeout of {timeout} seconds");
+                }
+            }
+        }
     }
 }

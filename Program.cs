@@ -24,5 +24,6 @@ public static class Program
     {
         string[] names = new string[] { "David", "Mario", "Alejandro", "Anthony", "Rick", "Peter" };
         Loops.Process(names);
+        Loops.Timeout(10);
     }
 }
