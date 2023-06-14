@@ -4,6 +4,12 @@ public static class Program
 {
     public static void Main()
     {
+        // Excercise1();
+        Excercise2();
+    }
+
+    public static void Excercise1()
+    {
         Person person = new()
         {
             FirstName = "David",
@@ -12,6 +18,11 @@ public static class Program
         };
         person.SendMessage();
         person.OutputTimeSinceBirth();
+    }
 
+    public static void Excercise2()
+    {
+        string[] names = new string[] { "David", "Mario", "Alejandro", "Anthony", "Rick", "Peter" };
+        Loops.Process(names);
     }
 }
