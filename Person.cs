@@ -31,13 +31,13 @@ namespace App
                     Console.WriteLine($"You are {(currentDateTime - Birthday).TotalDays:N0} days old");
                     break;
                 case TimeMeasurementUnit.Weeks:
-                    Console.WriteLine($"You are {Math.Round(((currentDateTime - Birthday).TotalDays) / 365 * 52, 2):N0} weeks old");
+                    Console.WriteLine($"You are {Math.Round((currentDateTime - Birthday).TotalDays / 365 * 52, 2):N0} weeks old");
                     break;
                 case TimeMeasurementUnit.Years:
-                    Console.WriteLine($"You are {Math.Round(((currentDateTime - Birthday).TotalDays) / 365, 2)} years old");
+                    Console.WriteLine($"You are {Math.Round((currentDateTime - Birthday).TotalDays / 365, 2)} years old");
                     break;
                 case TimeMeasurementUnit.Decades:
-                    Console.WriteLine($"You are {Math.Round(((currentDateTime - Birthday).TotalDays) / 365 / 10, 2)} decades old");
+                    Console.WriteLine($"You are {Math.Round((currentDateTime - Birthday).TotalDays / 365 / 10, 2)} decades old");
                     break;
                 default:
                     break;
