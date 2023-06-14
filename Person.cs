@@ -17,7 +17,8 @@ namespace App
             DateTime currentDateTime = DateTime.Now;
 
             Console.WriteLine($"It is currently {currentDateTime}");
-            Console.WriteLine("Calculating time since birth ...\n");
+            Console.WriteLine("Calculating time since birth");
+            Console.WriteLine("You are currently:\n");
 
             foreach (TimeMeasurementUnit unit in Enum.GetValues(typeof(TimeMeasurementUnit)))
             {
@@ -31,25 +32,25 @@ namespace App
             switch (timeMeasurementUnit)
             {
                 case TimeMeasurementUnit.Seconds:
-                    Console.WriteLine($"You are {(currentDateTime - Birthday).TotalSeconds:N0} seconds old");
+                    Console.WriteLine($"{(currentDateTime - Birthday).TotalSeconds:N0} seconds old");
                     break;
                 case TimeMeasurementUnit.Minutes:
-                    Console.WriteLine($"You are {(currentDateTime - Birthday).TotalMinutes:N0} minutes old");
+                    Console.WriteLine($"{(currentDateTime - Birthday).TotalMinutes:N0} minutes old");
                     break;
                 case TimeMeasurementUnit.Hours:
-                    Console.WriteLine($"You are {(currentDateTime - Birthday).TotalHours:N0} hours old");
+                    Console.WriteLine($"{(currentDateTime - Birthday).TotalHours:N0} hours old");
                     break;
                 case TimeMeasurementUnit.Days:
-                    Console.WriteLine($"You are {(currentDateTime - Birthday).TotalDays:N0} days old");
+                    Console.WriteLine($"{(currentDateTime - Birthday).TotalDays:N0} days old");
                     break;
                 case TimeMeasurementUnit.Weeks:
-                    Console.WriteLine($"You are {Math.Round((currentDateTime - Birthday).TotalDays / 365 * 52, 2):N0} weeks old");
+                    Console.WriteLine($"{Math.Round((currentDateTime - Birthday).TotalDays / 365 * 52, 2):N0} weeks old");
                     break;
                 case TimeMeasurementUnit.Years:
-                    Console.WriteLine($"You are {Math.Round((currentDateTime - Birthday).TotalDays / 365, 2)} years old");
+                    Console.WriteLine($"{Math.Round((currentDateTime - Birthday).TotalDays / 365, 2)} years old");
                     break;
                 case TimeMeasurementUnit.Decades:
-                    Console.WriteLine($"You are {Math.Round((currentDateTime - Birthday).TotalDays / 365 / 10, 2)} decades old");
+                    Console.WriteLine($"{Math.Round((currentDateTime - Birthday).TotalDays / 365 / 10, 2)} decades old");
                     break;
                 default:
                     break;
