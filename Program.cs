@@ -45,42 +45,34 @@ public static class Program
 
     public static void Excercise4()
     {
-        Book book1 = new()
-        {
-            IsAvailable = false,
-            Name = "Lord of the Flies"
+
+        List<Book> books = new() {
+            new Book
+            {
+                IsAvailable = false,
+                Name = "Lord of the Flies"
+            },
+            new Book
+            {
+                IsAvailable = true,
+                Name = "The Very Hungry Caterpillar"
+            }
         };
 
-        try
+        foreach (Book book in books)
         {
-            book1.CheckOut("David Garibay");
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine(ex.Message);
-        }
-        finally
-        {
-            Console.WriteLine("Have a great day!");
-        }
-
-        Book book2 = new()
-        {
-            IsAvailable = true,
-            Name = "The Very Hungry Caterpillar"
-        };
-
-        try
-        {
-            book2.CheckOut("David Garibay");
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine(ex.Message);
-        }
-        finally
-        {
-            Console.WriteLine("Have a great day!");
+            try
+            {
+                book.CheckOut("David Garibay");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                Console.WriteLine("Have a great day!");
+            }
         }
 
     }
