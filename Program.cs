@@ -7,7 +7,10 @@ public static class Program
         // Excercise1();
         // Excercise2();
         // Excercise3();
-        Excercise4();
+        // Excercise4();
+        // Excercise5();
+        Excercise6();
+
     }
 
     public static void Excercise1()
@@ -75,5 +78,54 @@ public static class Program
             }
         }
 
+
     }
+    public static void Excercise5()
+    {
+        WalkieTalkie walkieTalkie = new(
+            message: "Hello from my walkie Talkie"
+        );
+
+        walkieTalkie.SetCommunicationMethod();
+        walkieTalkie.SendMessage();
+    }
+
+    public static void Excercise6()
+    {
+        List<object> items = new() {
+            "David",
+            "Bear",
+            "Toby",
+            9,
+            'A',
+            'F',
+            'H',
+            'D',
+            "Hello World",
+            9327,
+            80,
+            20,
+            -3,
+            122.30,
+            -49.0,
+            1.0003,
+            'c'
+        };
+
+        Filter filter = new(items: items);
+        var output = filter.GetEventNumbers();
+
+        Console.WriteLine("Input: ");
+        foreach (var item in items)
+        {
+            Console.Write(item + " ");
+        }
+        Console.WriteLine("\nOutput: ");
+
+        foreach (var item in output)
+        {
+            Console.Write(item + " ");
+        }
+    }
+
 }
